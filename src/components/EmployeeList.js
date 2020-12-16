@@ -45,9 +45,11 @@ const EmployeeList = () => {
           </tr>
         </thead>
         <tbody>
-          {employees.map((employee) => (
-            <Employee employee={employee} />
-          ))}
+          {employees
+            .sort((a, b) => (a.name < b.name ? -1 : 1))
+            .map((employee) => (
+              <Employee employee={employee} />
+            ))}
         </tbody>
       </table>
 
